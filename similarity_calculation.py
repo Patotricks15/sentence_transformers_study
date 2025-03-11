@@ -1,4 +1,4 @@
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, SimilarityFunction
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
@@ -18,6 +18,9 @@ sentences2 = [
 # Compute embeddings for both lists
 embeddings1 = model.encode(sentences1)
 embeddings2 = model.encode(sentences2)
+
+# Change the similarity function to DOT distance
+model.similarity_fn_name = SimilarityFunction.DOT
 
 # Compute cosine similarities
 similarities = model.similarity(embeddings1, embeddings2)

@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer, SimilarityFunction
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# Two lists of sentences about economics (in English)
+# Two lists of sentences about economics
 sentences1 = [
     "The inflation rate has grown significantly",
     "The stock market soared today",
